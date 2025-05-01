@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/Varino - Normal.otf') format('opentype'); 
+}
+
+.main-containerz {
+    display: block;
+}
+
+.info-section {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100vw;
+}
+
+.purpose {
+    height: auto;
+    width: 50vw;
+    color: aqua;
+    font-family: MyFont;
+    padding: 30px;
+    animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.details-section {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.details-section-one {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Logo-section {
+    display: flex;
+    font-family: MyFont;
+    color: aqua;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-left: 30px;
+    color: transparent;
+    -webkit-text-stroke: 2px aqua;
+}
+
+.Logo span {
+    display: inline-block;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: waveDrop 0.9s ease forwards;
+}
+
+@keyframes waveDrop {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.rest-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.rest1 {
+    color: rgba(255, 255, 255, 0.76);
+    padding: 20px;
+    animation: slideLeft 1s ease-out forwards;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.rest2 {
+    display: flex;
+    color: rgba(127, 255, 212, 0.686);
+    animation: slideRight 1s ease-out forwards;
+    flex-wrap: wrap;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.rest2 h5 {
+    padding: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-out forwards;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-section {
+    width: 60vw;
+    padding: 20px;
+    min-height: 40px;
+    background-color: rgba(0, 0, 0, 0.809);
+    box-shadow: none; 
+    outline: none; 
+    border: none;
+    color: aqua;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
+}
+
+.buttontosearch {
+    height: 80px;
+    padding: 10px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgba(0, 0, 0, 0.768);
+    border: none;
+    color: white;
+    margin: 0.5px;
+    width: 100px;
+    box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .purpose, .rest1, .rest2, .Logo-section {
+        width: 100%;
+        padding: 20px;
+        font-size: 1.8rem;
+    }
+
+    .input-section {
+        width: 80%;
+    }
+
+    .buttontosearch {
+        width: 20%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+
+    .purpose {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .details-section {
+        flex-direction: column;
+    }
+
+    .Logo-section {
+        font-size: 3rem;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .rest-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .input-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .input-section {
+        width: 90%;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    .buttontosearch {
+        width: 90%;
+        border-radius: 20px;
+    }
+}

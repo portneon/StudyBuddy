@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'MyFont2';
+    src: url('/fonts/Jomhuria-Regular.ttf') format('opentype');
+    font-style: unset;
+  }
+  
+  .search-page {
+    font-family: 'Jhomuria', sans-serif;
+    color: aqua;
+    padding: 40px;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .input-section-1 {
+    width: 60vw;
+    max-width: 700px;
+    padding: 20px;
+    min-height: 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: none;
+    outline: none;
+    color: aqua;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
+    font-size: 1rem;
+  }
+  
+  .buttontosearch {
+    height: 80px;
+    padding: 10px;
+    width: 20vw;
+    max-width: 120px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttontosearch:hover {
+    background-color: #111;
+    cursor: pointer;
+  }
+  
+  .response-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .response-card h2 {
+    font-size: 2.5rem;
+    color: aqua;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  
+  .section {
+    margin-top: 30px;
+  }
+  
+  .section h3 {
+    color: rgba(0, 255, 255, 0.8);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .flashcard,
+  .mcq,
+  .section ul li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .flashcard strong,
+  .mcq p strong {
+    color: aqua;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .loading-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #78a3ca;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: wave 2s ease-in-out infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+      transform: translate(-50%, -50%) rotate(5deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    75% {
+      transform: translate(-50%, -50%) rotate(-5deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  
+  /* Responsive Design */
+  
+  /* Tablets */
+  @media (max-width: 1024px) {
+    .input-section-1 {
+      width: 75vw;
+    }
+  
+    .buttontosearch {
+      width: 25vw;
+    }
+  
+    .response-card h2 {
+      font-size: 2rem;
+    }
+  
+    .section h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Mobile phones */
+  @media (max-width: 768px) {
+    .input-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .input-section-1 {
+      width: 90vw;
+      border-radius: 20px;
+    }
+  
+    .buttontosearch {
+      width: 90vw;
+      border-radius: 20px;
+      height: 60px;
+    }
+  
+    .response-card {
+      padding: 20px;
+    }
+  
+    .response-card h2 {
+      font-size: 1.8rem;
+    }
+  
+    .section h3 {
+      font-size: 1.2rem;
+    }
+  
+    .loading-message {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+   
+  }
+  
