@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-
 import './SearchPage.css';
 
 const SearchPage = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get("query") || "";
-  
-  const [Data, setData] = useState('');
+
+  const [Data, setData] = useState(query); // initialize Data with query
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [mcqAnswers, setMcqAnswers] = useState({});
 
-  const fetchData = async () => {
-    if (!query) return;
+  const fetchData = async (searchQuery) => {
+    if (!searchQuery) return;
 
-    const prompt = `You are an AI educational assistant. Generate structured study material for the topic ${query}. Return the result in the following JSON format:
+    const prompt = `You are an AI educational assistant. Generate structured study material for the topic ${searchQuery}. Return the result in the following JSON format:
 
     {
       "topic": "Topic Name",
@@ -86,7 +85,7 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
-    if (query) fetchData();
+    if (query) fetchData(query);
   }, [query]);
 
   const formatResponse = (response) => {
@@ -163,7 +162,7 @@ const SearchPage = () => {
                 <p>{mcq.question}</p>
                 <ul>
                   {mcq.options.map((opt, j) => (
-                    <li
+                    <li 
                       key={j}
                       onClick={() => handleOptionClick(opt)}
                       style={{
@@ -172,7 +171,7 @@ const SearchPage = () => {
                           ? isCorrect
                             ? "green"
                             : "red"
-                          : "black",
+                          : "white",
                         cursor: "pointer",
                       }}
                     >
@@ -203,19 +202,21 @@ const SearchPage = () => {
 
         <div className="section">
           <h3>🧠 Mnemonics</h3>
-          
-        
-          <pre> <ul>{parsed.mnemonics.map((mne, i) => <li key={i}>{mne}</li>)}</ul></pre>
-   
+          <pre><ul>{parsed.mnemonics.map((mne, i) => <li key={i}>{mne}</li>)}</ul></pre>
         </div>
       </div>
     );
-  }
+  };
 
   return (
     <div className="search-page">
+    
+ 
       <div className="input-container">
+      
+      
         <input
+          
           className="input-section-1"
           type="text"
           value={Data}
@@ -224,17 +225,23 @@ const SearchPage = () => {
         />
         <button
           className="buttontosearch"
-          onClick={() => fetchData()}
+          onClick={() => {
+            const searchParams = new URLSearchParams();
+            searchParams.set("query", Data);
+            window.history.pushState({}, "", `?${searchParams.toString()}`);
+            fetchData(Data); // Use Data directly
+          }}
           disabled={loading || !Data || query === Data}
         >
           {loading ? "Loading..." : "Search"}
-        </button>
-      </div>
+          </button>
+          </div>
+   
 
       {error && <div className="error-message">{error}</div>}
 
       {loading ? (
-        <div className="loading-message">Hold On, we are cooking you notes...</div>
+        <div className="loading-message">Hold On, we are making you notes...</div>
       ) : (
         response && formatResponse(response)
       )}

@@ -5,10 +5,11 @@
 
 .main-containerz {
     display: block;
+
 }
 
 .info-section {
-    margin-top: 100px;
+
     display: flex;
     flex-wrap: wrap;
     height: auto;
@@ -17,10 +18,10 @@
 
 .purpose {
     height: auto;
-    width: 50vw;
+    width: 30vw;
     color: aqua;
     font-family: MyFont;
-    padding: 30px;
+    padding: 20px;
     animation: slideDown 1s ease-out forwards;
 }
 
@@ -40,31 +41,23 @@
     flex-wrap: wrap;
     height: auto;
 }
-
-.details-section-one {
-    display: flex;
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .Logo-section {
     display: flex;
     font-family: MyFont;
     color: aqua;
     font-size: 5rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: lowercase;
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    margin-left: 30px;
+    padding: 30px;
+    /* margin-left: 50px; */
     color: transparent;
     -webkit-text-stroke: 2px aqua;
+    text-align: center;
+    width: 100%;
 }
 
 .Logo span {
@@ -89,7 +82,7 @@
 }
 
 .rest1 {
-    color: rgba(255, 255, 255, 0.76);
+    color: rgba(244, 254, 255, 0.76);
     padding: 20px;
     animation: slideLeft 1s ease-out forwards;
 }
@@ -110,6 +103,7 @@
     color: rgba(127, 255, 212, 0.686);
     animation: slideRight 1s ease-out forwards;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 @keyframes slideRight {
@@ -133,6 +127,7 @@
     justify-content: center;
     animation: fadeIn 1.5s ease-out forwards;
     flex-wrap: wrap;
+
 }
 
 @keyframes fadeIn {
@@ -147,9 +142,12 @@
 }
 
 .input-section {
+    display: flex;
+    align-items: center;
+    justify-self: center;
     width: 60vw;
     padding: 20px;
-    min-height: 40px;
+    min-height: 30px;
     background-color: rgba(0, 0, 0, 0.809);
     box-shadow: none; 
     outline: none; 
@@ -157,10 +155,12 @@
     color: aqua;
     border-radius: 20px 0px 0px 20px;
     box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
+   
 }
 
-.buttontosearch {
-    height: 80px;
+.buttontosearch-1 {
+   
+    height: 70px;
     padding: 10px;
     border-radius: 0px 20px 20px 0px;
     background-color: rgba(0, 0, 0, 0.768);
@@ -171,7 +171,7 @@
     box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
 }
 
-/* Media Queries for Responsiveness */
+
 
 /* Tablets */
 @media (max-width: 1024px) {

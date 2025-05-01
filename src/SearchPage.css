@@ -6,7 +6,7 @@
   
   .search-page {
     font-family: 'Jhomuria', sans-serif;
-    color: aqua;
+    color: rgb(255, 255, 255);
     padding: 40px;
     background-color: #0a0a0a;
     min-height: 100vh;
@@ -31,7 +31,7 @@
     color: aqua;
     border-radius: 20px 0 0 20px;
     box-shadow: 0 12px 30px rgba(59, 58, 58, 0.504);
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   
   .buttontosearch {
@@ -82,11 +82,14 @@
   .flashcard,
   .mcq,
   .section ul li {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(18, 4, 4, 0.303);
+    box-shadow: 0 5px 10px rgba(73, 51, 51, 0.504);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 10px;
     color: white;
+    list-style: none;
+    
   }
   
   .flashcard strong,
@@ -187,4 +190,20 @@
     }
    
   }
+  .logo {
+      font-family: MyFont;
+      color: aqua;
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      color: transparent;
+      -webkit-text-stroke: 2px aqua;
   
+      /* Alignment Fix */
+      margin-left: 0; /* Reset margin */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }

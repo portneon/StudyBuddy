@@ -35,7 +35,7 @@ function Home() {
               value={data}
               onChange={(e) => { setData(e.target.value); }} // Ensure the input is controlled
             />
-            <button className="buttontosearch" onClick={handleSearch}>Search</button>
+            <button className="buttontosearch-1" onClick={handleSearch}>Search</button>
           </div>
         </div>
         <div className="details-section">
