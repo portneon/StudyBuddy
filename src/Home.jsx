@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";  // Import useNavigate
+import { useNavigate } from "react-router-dom";  
 import "./Home.css";
 
 function Home() {
   const [data, setData] = useState('');
   const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();  // Initialize useNavigate
+  const navigate = useNavigate();  
 
   const handleSearch = () => {
     if (data) {
-      // Navigate to the SearchPage with the query parameter
+     
       navigate(`/search?query=${data}`);
     }
   };
@@ -33,7 +33,7 @@ function Home() {
               className="input-section"
               placeholder="Search the topic name..."
               value={data}
-              onChange={(e) => { setData(e.target.value); }} // Ensure the input is controlled
+              onChange={(e) => { setData(e.target.value); }} 
             />
             <button className="buttontosearch-1" onClick={handleSearch}>Search</button>
           </div>
