@@ -7,7 +7,7 @@ const SearchPage = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get("query") || "";
 
-  const [Data, setData] = useState(query); // initialize Data with query
+  const [Data, setData] = useState(query); 
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -229,7 +229,7 @@ const SearchPage = () => {
             const searchParams = new URLSearchParams();
             searchParams.set("query", Data);
             window.history.pushState({}, "", `?${searchParams.toString()}`);
-            fetchData(Data); // Use Data directly
+            fetchData(Data); 
           }}
           disabled={loading || !Data || query === Data}
         >
