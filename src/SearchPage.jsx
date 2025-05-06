@@ -241,7 +241,7 @@ const SearchPage = () => {
       {error && <div className="error-message">{error}</div>}
 
       {loading ? (
-        <div className="loading-message">Hold On, we are making you notes...</div>
+        <div className="loading-message">Hold On, we are making your notes...</div>
       ) : (
         response && formatResponse(response)
       )}
